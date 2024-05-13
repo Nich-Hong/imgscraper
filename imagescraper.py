@@ -9,9 +9,10 @@ import os
 def launch_scraper(webpage):
   options = webdriver.ChromeOptions()
   options.add_argument("--incognito")
+  #removes window from appearing everytime
+  options.add_argument("--headless")
   options.add_experimental_option("detach",True)
   driver = webdriver.Chrome(options = options)
-  driver.set_window_size(100,100)
   driver.get(webpage)
   src_list = []
   try:
